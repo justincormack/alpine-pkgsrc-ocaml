@@ -11,5 +11,5 @@ ENV \
   PATH=/root/.opam/system/bin:$PATH
 
 RUN \
-  cd /usr/pkgsrc/misc/ocaml-opam && bmake && bmake install && \
+  cd /usr/pkgsrc/misc/ocaml-opam && bmake && bmake install && bmake clean-depends && \
   opam init -y
