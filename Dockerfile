@@ -12,4 +12,5 @@ ENV \
 
 RUN \
   cd /usr/pkgsrc/misc/ocaml-opam && bmake && bmake install && bmake clean-depends && \
-  opam init -y
+  opam init -y && \
+  opam update
