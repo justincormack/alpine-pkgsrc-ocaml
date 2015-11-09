@@ -10,6 +10,8 @@ ENV \
   OCAML_TOPLEVEL_PATH="/root/.opam/system/lib/toplevel" \
   PATH=/root/.opam/system/bin:$PATH
 
+COPY aspcud /usr/local/bin/
+
 RUN \
   cd /usr/pkgsrc/misc/ocaml-opam && bmake && bmake install && bmake clean-depends && \
   opam init -y && \
