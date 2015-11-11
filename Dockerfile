@@ -27,6 +27,6 @@ RUN tar xzvf opam-full-1.2.2.tar.gz             \
     && make install                             \
     && opam init --comp=4.02.3
 
-RUN opam install findlib
+RUN opam install ocamlfind
 
 CMD ["sh"]
