@@ -16,10 +16,8 @@ COPY profile /root/.profile
 COPY shinit /root/.shinit
 COPY ocamlinit /root/.ocamlinit
 
-RUN apk update && apk upgrade                               \
-    && apk add bash gmp-dev linux-headers                   \
-    && ( cd /usr/pkgsrc/lang/camlp4                         \
-         && bmake && bmake install && bmake clean-depends )
+RUN cd /usr/pkgsrc/lang/camlp4                         \
+     && bmake && bmake install && bmake clean-depends
 
 RUN wget https://github.com/ocaml/opam/releases/download/1.2.2/opam-full-1.2.2.tar.gz
 
